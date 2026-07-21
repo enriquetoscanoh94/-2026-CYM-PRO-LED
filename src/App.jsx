@@ -7,6 +7,9 @@ const FACEBOOK = 'https://www.facebook.com/CYMPROLED'
 const INSTAGRAM = 'https://www.instagram.com/cym.pro.54'
 const YOUTUBE = 'https://www.youtube.com/channel/UCSAqHdUIk088nN3-UlJlXlw'
 
+/* Prefija la ruta base del sitio (necesario para GitHub Pages en subcarpeta) */
+const asset = (p) => `${import.meta.env.BASE_URL}${p}`
+
 /* Iconos de redes con sus colores oficiales de marca */
 const IconFacebook = () => (
   <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
@@ -74,7 +77,7 @@ function Nav() {
   return (
     <header className={`nav ${scrolled ? 'nav-solid' : ''}`}>
       <a href="#inicio" className="nav-logo">
-        <img src="/img/logo.png" alt="CYM PRO LED" />
+        <img src={asset('img/logo.png')} alt="CYM PRO LED" />
       </a>
       <nav className="nav-links">
         <a href="#productos">Productos</a>
@@ -92,7 +95,7 @@ function Nav() {
 function Hero() {
   return (
     <section id="inicio" className="hero">
-      <video className="hero-video" src="/video/hero.mp4" autoPlay muted loop playsInline />
+      <video className="hero-video" src={asset('video/hero.mp4')} autoPlay muted loop playsInline />
       <div className="hero-overlay" />
       <div className="beam beam-1" />
       <div className="beam beam-2" />
@@ -453,18 +456,18 @@ function Productos() {
 }
 
 const galeria = [
-  { src: '/img/produccion-beams.jpg', alt: 'Cabezas móviles ROMA 7R Plus proyectando haces de colores' },
-  { src: '/img/produccion-humo.jpg', alt: 'Show de luces con máquina de humo en plena producción' },
-  { src: '/img/produccion-cabezas.jpg', alt: 'Batería de cabezas móviles listas para evento' },
-  { src: '/img/produccion-marcas.jpg', alt: 'Beams de colores de las mejores marcas del mercado' },
-  { src: '/img/showroom-globos.jpg', alt: 'Pantallas de LED encendidas en el showroom' },
-  { src: '/img/showroom-cocacola.jpg', alt: 'Demo de pantallas de LED con publicidad' },
-  { src: '/img/showroom-colores.jpg', alt: 'Pantallas de LED a todo color con cases CYM PRO LED' },
-  { src: '/img/showroom-acuario.jpg', alt: 'Pantallas curvas de LED en demostración' },
-  { src: '/img/evento-escenario.jpg', alt: 'Escenario de evento con estructura e iluminación' },
-  { src: '/img/estructura-gabinetes.jpg', alt: 'Estructura trasera de gabinetes de LED' },
-  { src: '/img/showroom-globos2.jpg', alt: 'Pantallas de LED de gran formato' },
-  { src: '/img/showroom-logo.jpg', alt: 'Showroom CYM PRO LED' },
+  { src: asset('img/produccion-beams.jpg'), alt: 'Cabezas móviles ROMA 7R Plus proyectando haces de colores' },
+  { src: asset('img/produccion-humo.jpg'), alt: 'Show de luces con máquina de humo en plena producción' },
+  { src: asset('img/produccion-cabezas.jpg'), alt: 'Batería de cabezas móviles listas para evento' },
+  { src: asset('img/produccion-marcas.jpg'), alt: 'Beams de colores de las mejores marcas del mercado' },
+  { src: asset('img/showroom-globos.jpg'), alt: 'Pantallas de LED encendidas en el showroom' },
+  { src: asset('img/showroom-cocacola.jpg'), alt: 'Demo de pantallas de LED con publicidad' },
+  { src: asset('img/showroom-colores.jpg'), alt: 'Pantallas de LED a todo color con cases CYM PRO LED' },
+  { src: asset('img/showroom-acuario.jpg'), alt: 'Pantallas curvas de LED en demostración' },
+  { src: asset('img/evento-escenario.jpg'), alt: 'Escenario de evento con estructura e iluminación' },
+  { src: asset('img/estructura-gabinetes.jpg'), alt: 'Estructura trasera de gabinetes de LED' },
+  { src: asset('img/showroom-globos2.jpg'), alt: 'Pantallas de LED de gran formato' },
+  { src: asset('img/showroom-logo.jpg'), alt: 'Showroom CYM PRO LED' },
 ]
 
 function Carousel({ items }) {
@@ -637,7 +640,7 @@ function Footer() {
     <footer id="contacto" className="footer">
       <div className="footer-grid">
         <div>
-          <img src="/img/logo.png" alt="CYM PRO LED" className="footer-logo" />
+          <img src={asset('img/logo.png')} alt="CYM PRO LED" className="footer-logo" />
           <p className="footer-desc">
             Venta de pantallas de LED e iluminaci&oacute;n profesional para eventos en M&eacute;xico.
           </p>
